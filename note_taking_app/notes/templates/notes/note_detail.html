@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ note.title }}</h2>
+<p>{{ note.content }}</p>
+<p>
+    {% for tag in note.tags.all %}
+        <span class="tag">#{{ tag.name }}</span>
+    {% endfor %}
+    {% if note.category %}
+        <span class="category">Category: {{ note.category.name }}</span>
+    {% endif %}
+</p>
+<p><small>Created: {{ note.created_at|date:"M d, Y H:i" }}</small></p>
+<p><small>Last updated: {{ note.updated_at|date:"M d, Y H:i" }}</small></p>
+
+<p>
+    <a href="{% url 'notes:note_update' note.pk %}">Edit</a> |
+    <a href="{% url 'notes:note_delete' note.pk %}">Delete</a>
+</p>
+<p><a href="{% url 'notes:note_list' %}">Back to Notes</a></p>
+{% endblock %}

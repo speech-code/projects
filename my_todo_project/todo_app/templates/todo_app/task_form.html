@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if form.instance.pk %}Edit Task{% else %}Create Task{% endif %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        form { background: #fff; padding: 20px; border-radius: 5px; }
+        form p { margin-bottom: 15px; }
+        form label { display: block; margin-bottom: 5px; font-weight: bold; }
+        form input[type="text"], form input[type="checkbox"] { padding: 8px; border-radius: 4px; border: 1px solid #ddd; width: calc(100% - 18px); }
+        form input[type="checkbox"] { width: auto; margin-right: 10px; }
+        form button { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
+        form button:hover { background-color: #0056b3; }
+        .back-link { display: inline-block; margin-top: 20px; color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Edit Task{% else %}Create New Task{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'task_list' %}" class="back-link">Back to Task List</a>
+</body>
+</html>

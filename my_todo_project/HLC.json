@@ -1,0 +1,55 @@
+
+[
+  {
+    "name": "DJANGO-STYLE",
+    "type": "entry_level",
+    "prompt": "Create this project using django style project structure.",
+    "linkers": [
+      {
+        "name": "rules",
+        "description": "Project rules",
+        "value": {
+          "name": "DJANGO-STYLE-RULE",
+          "type": "directive",
+          "prompt": "Separate the settings file into local, production and testing."
+        }
+      },
+      {
+        "name": "framework",
+        "description": "Project framework",
+        "value": {
+          "name": "DJANGO",
+          "type": "directive",
+          "prompt": "Use python Django as the framework for this project.",
+          "linkers": [
+            {
+              "name": "version",
+              "description": "Django version",
+              "value": {
+                "name": "VERSION",
+                "type": "literal",
+                "prompt": "Use the latest version of Django."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "TODO-APP",
+    "type": "top_level",
+    "prompt": "Create a todo application.",
+    "linkers": [
+      {
+        "name": "features",
+        "description": "Core features of the todo app",
+        "value": {
+          "name": "TASK-MANAGEMENT",
+          "type": "feature",
+          "prompt": "Allow users to create, read, update, and delete tasks."
+        }
+      }
+    ]
+  }
+]

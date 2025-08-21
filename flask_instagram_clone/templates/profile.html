@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Clone - {{ profile_username }}'s Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1 class="logo"><a href="{{ url_for('index') }}">InstaClone</a></h1>
+            <ul>
+                <li><a href="{{ url_for('create_post') }}">New Post</a></li>
+                <li><a href="{{ url_for('search_users') }}">Search</a></li>
+                {% if current_user %}
+                    <li><a href="{{ url_for('profile', username=current_user['username']) }}">Profile ({{ current_user['username'] }})</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container profile-page">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <h2>{{ profile_username }}'s Profile</h2>
+        {% if current_user and current_user['username'] != profile_username %}
+            <div class="profile-actions">
+                {% if is_following %}
+                    <a href="{{ url_for('unfollow', username=profile_username) }}" class="btn btn-secondary">Unfollow</a>
+                {% else %}
+                    <a href="{{ url_for('follow', username=profile_username) }}" class="btn btn-primary">Follow</a>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <h3>Posts by {{ profile_username }}</h3>
+        <div class="user-posts-grid">
+            {% if user_posts %}
+                {% for post in user_posts %}
+                    <div class="post-card">
+                        <img src="{{ post['image_url'] }}" alt="{{ post['caption'] }}">
+                        <div class="post-content">
+                            <p><strong>@{{ post['username'] }}</strong> {{ post['caption'] }}</p>
+                            <div class="post-actions">
+                                <a href="{{ url_for('like_post', post_id=post['id']) }}">
+                                    {% if current_user and post['id'] in likes and current_user['username'] in likes[post['id']] %}
+                                        Unlike
+                                    {% else %}
+                                        Like
+                                    {% endif %}
+                                </a>
+                                <span>{{ likes.get(post['id'], [])|length }} Likes</span>
+                            </div>
+                            <div class="comments-section">
+                                {% if comments.get(post['id']) %}
+                                    {% for comment in comments[post['id']] %}
+                                        <p><strong>{{ comment['username'] }}</strong> {{ comment['text'] }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                                <form action="{{ url_for('add_comment', post_id=post['id']) }}" method="POST">
+                                    <input type="text" name="comment_text" placeholder="Add a comment..." required>
+                                    <button type="submit">Comment</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No posts yet from {{ profile_username }}.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

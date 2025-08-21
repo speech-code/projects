@@ -1,0 +1,201 @@
+[
+  {
+    "name": "DJANGO-STYLE",
+    "type": "entry_level",
+    "prompt": "Create this project using django style project structure.",
+    "linkers": [
+      {
+        "name": "rules",
+        "description": "Project rules",
+        "value": {
+          "name": "DJANGO-STYLE-RULE",
+          "type": "directive",
+          "prompt": "Separate the settings file into local, production and testing."
+        }
+      },
+      {
+        "name": "framework",
+        "description": "Project framework",
+        "value": {
+          "name": "DJANGO",
+          "type": "directive",
+          "prompt": "Use python Django as the framework for this project.",
+          "linkers": [
+            {
+              "name": "version",
+              "description": "Django version",
+              "value": {
+                "name": "VERSION",
+                "type": "literal",
+                "prompt": "Use the latest version of Django."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "NOTE-TAKING-WEB-APP",
+    "type": "top_level",
+    "prompt": "Create a note taking web app.",
+    "linkers": [
+      {
+        "name": "user_accounts",
+        "description": "User account management for the application.",
+        "value": {
+          "name": "USER-ACCOUNTS",
+          "type": "feature",
+          "prompt": "Users should be able to sign up, log in, and have their own private notes.",
+          "linkers": [
+            {
+              "name": "authentication",
+              "description": "User authentication method.",
+              "value": {
+                "name": "USER-AUTHENTICATION",
+                "type": "feature",
+                "prompt": "Implement user authentication.",
+                "linkers": [
+                  {
+                    "name": "method",
+                    "description": "Authentication method.",
+                    "value": {
+                      "name": "EMAIL-PASSWORD-AUTH",
+                      "type": "directive",
+                      "prompt": "Use a simple email/password system for authentication."
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "note_management",
+        "description": "Features for managing notes.",
+        "value": {
+          "name": "NOTE-MANAGEMENT",
+          "type": "feature",
+          "prompt": "Users should be able to perform CRUD operations on their notes.",
+          "linkers": [
+            {
+              "name": "create",
+              "description": "Ability to create new notes.",
+              "value": {
+                "name": "CREATE-NOTE",
+                "type": "control",
+                "prompt": "Allow users to create new notes."
+              }
+            },
+            {
+              "name": "view",
+              "description": "Ability to view existing notes.",
+              "value": {
+                "name": "VIEW-NOTE",
+                "type": "control",
+                "prompt": "Allow users to view their notes."
+              }
+            },
+            {
+              "name": "edit",
+              "description": "Ability to edit existing notes.",
+              "value": {
+                "name": "EDIT-NOTE",
+                "type": "control",
+                "prompt": "Allow users to edit their notes."
+              }
+            },
+            {
+              "name": "delete",
+              "description": "Ability to delete notes.",
+              "value": {
+                "name": "DELETE-NOTE",
+                "type": "control",
+                "prompt": "Allow users to delete their notes."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "note_content",
+        "description": "Format of the note content.",
+        "value": {
+          "name": "NOTE-CONTENT",
+          "type": "feature",
+          "prompt": "Define the type of content for notes.",
+          "linkers": [
+            {
+              "name": "format",
+              "description": "Content format.",
+              "value": {
+                "name": "PLAIN-TEXT",
+                "type": "directive",
+                "prompt": "Notes will be plain text."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "note_organization",
+        "description": "Methods for organizing notes.",
+        "value": {
+          "name": "NOTE-ORGANIZATION",
+          "type": "feature",
+          "prompt": "Provide features to organize notes.",
+          "linkers": [
+            {
+              "name": "tags",
+              "description": "Ability to add tags to notes.",
+              "value": {
+                "name": "TAGS",
+                "type": "control",
+                "prompt": "Allow users to add tags to their notes for organization."
+              }
+            },
+            {
+              "name": "categories",
+              "description": "Ability to categorize notes.",
+              "value": {
+                "name": "CATEGORIES",
+                "type": "control",
+                "prompt": "Allow users to assign categories to their notes for organization."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "search",
+        "description": "Ability to search through notes.",
+        "value": {
+          "name": "SEARCH-NOTES",
+          "type": "feature",
+          "prompt": "Users should be able to search through their notes."
+        }
+      },
+      {
+        "name": "database",
+        "description": "Database choice for the application.",
+        "value": {
+          "name": "DATABASE",
+          "type": "directive",
+          "prompt": "Specify the database for the project.",
+          "linkers": [
+            {
+              "name": "type",
+              "description": "Type of database.",
+              "value": {
+                "name": "SQLITE",
+                "type": "literal",
+                "prompt": "Use SQLite as the database."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

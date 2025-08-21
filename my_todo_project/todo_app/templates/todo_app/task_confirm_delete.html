@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Task</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        h1 { color: #dc3545; }
+        p { margin-bottom: 20px; }
+        form button { background-color: #dc3545; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; }
+        form button:hover { background-color: #c82333; }
+        .back-link { display: inline-block; margin-top: 20px; color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>Delete Task</h1>
+    <p>Are you sure you want to delete "{{ task.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm Delete</button>
+        <a href="{% url 'task_list' %}" class="back-link">Cancel</a>
+    </form>
+</body>
+</html>

@@ -1,0 +1,171 @@
+
+[
+  {
+    "name": "FLASK-PROJECT-STRUCTURE",
+    "type": "entry_level",
+    "prompt": "Create this project using a standard Flask project structure.",
+    "linkers": [
+      {
+        "name": "backend_framework",
+        "description": "The backend framework to be used.",
+        "value": {
+          "name": "FLASK",
+          "type": "directive",
+          "prompt": "Use Python Flask as the backend framework for this project."
+        }
+      },
+      {
+        "name": "frontend_technologies",
+        "description": "The frontend technologies to be used.",
+        "value": {
+          "name": "VANILLA_FRONTEND",
+          "type": "directive",
+          "prompt": "Use vanilla HTML, CSS, and JavaScript for the frontend."
+        }
+      }
+    ]
+  },
+  {
+    "name": "INSTAGRAM-CLONE-APP",
+    "type": "top_level",
+    "prompt": "Create an Instagram clone application.",
+    "linkers": [
+      {
+        "name": "core_features",
+        "description": "Core functionalities of the Instagram clone.",
+        "value": {
+          "name": "CORE_FEATURES",
+          "type": "feature",
+          "prompt": "Implement the core features for an Instagram clone.",
+          "linkers": [
+            {
+              "name": "user_authentication",
+              "description": "User account management features.",
+              "value": {
+                "name": "USER_AUTHENTICATION",
+                "type": "feature",
+                "prompt": "Enable user sign up, login, and logout functionality.",
+                "linkers": [
+                  {
+                    "name": "signup_fields",
+                    "description": "Required fields for user signup.",
+                    "value": {
+                      "name": "SIGNUP_FIELDS",
+                      "type": "literal",
+                      "prompt": "Users should provide email, username, and password for signup."
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "name": "content_posting",
+              "description": "Features for users to post content.",
+              "value": {
+                "name": "CONTENT_POSTING",
+                "type": "feature",
+                "prompt": "Allow users to post photos with captions.",
+                "linkers": [
+                  {
+                    "name": "post_media_type",
+                    "description": "Type of media allowed in posts.",
+                    "value": {
+                      "name": "PHOTOS_ONLY",
+                      "type": "literal",
+                      "prompt": "Only photos should be allowed for posts."
+                    }
+                  },
+                  {
+                    "name": "caption_support",
+                    "description": "Ability to add captions to posts.",
+                    "value": {
+                      "name": "CAPTIONS",
+                      "type": "literal",
+                      "prompt": "Users should be able to add captions to their posts."
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "name": "content_viewing",
+              "description": "Features for viewing content.",
+              "value": {
+                "name": "CONTENT_VIEWING",
+                "type": "feature",
+                "prompt": "Provide a main feed and individual user profiles to view content.",
+                "linkers": [
+                  {
+                    "name": "main_feed",
+                    "description": "Behavior of the main content feed.",
+                    "value": {
+                      "name": "FOLLOWED_USERS_FEED",
+                      "type": "literal",
+                      "prompt": "The main feed should display posts from users the current user follows."
+                    }
+                  },
+                  {
+                    "name": "user_profiles",
+                    "description": "Dedicated pages for user profiles.",
+                    "value": {
+                      "name": "USER_PROFILES",
+                      "type": "literal",
+                      "prompt": "Each user should have a profile page displaying all their posts."
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "name": "post_interactions",
+              "description": "Ways users can interact with posts.",
+              "value": {
+                "name": "POST_INTERACTIONS",
+                "type": "feature",
+                "prompt": "Enable liking and commenting on posts.",
+                "linkers": [
+                  {
+                    "name": "liking",
+                    "description": "Ability to like posts.",
+                    "value": {
+                      "name": "LIKE_POSTS",
+                      "type": "literal",
+                      "prompt": "Users can like posts."
+                    }
+                  },
+                  {
+                    "name": "commenting",
+                    "description": "Ability to comment on posts.",
+                    "value": {
+                      "name": "COMMENT_ON_POSTS",
+                      "type": "literal",
+                      "prompt": "Users can comment on posts."
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "name": "follow_system",
+              "description": "Functionality for users to follow/unfollow others.",
+              "value": {
+                "name": "FOLLOW_SYSTEM",
+                "type": "feature",
+                "prompt": "Implement a system for users to follow and unfollow other users."
+              }
+            },
+            {
+              "name": "user_search",
+              "description": "Ability to search for users.",
+              "value": {
+                "name": "USER_SEARCH",
+                "type": "feature",
+                "prompt": "Users should be able to search for other users."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

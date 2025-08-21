@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Clone - Search Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1 class="logo"><a href="{{ url_for('index') }}">InstaClone</a></h1>
+            <ul>
+                <li><a href="{{ url_for('create_post') }}">New Post</a></li>
+                <li><a href="{{ url_for('search_users') }}">Search</a></li>
+                {% if current_user %}
+                    <li><a href="{{ url_for('profile', username=current_user['username']) }}">Profile ({{ current_user['username'] }})</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container auth-form">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <h2>Search Users</h2>
+        <form action="{{ url_for('search_users') }}" method="POST">
+            <div class="form-group">
+                <label for="query">Search by username:</label>
+                <input type="text" id="query" name="query" required>
+            </div>
+            <button type="submit" class="btn">Search</button>
+        </form>
+    </div>
+</body>
+</html>
