@@ -1,0 +1,166 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header button {
+  background-color: #fff;
+  color: #4CAF50;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.search-bar {
+  padding: 1rem;
+  background-color: #eee;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.note-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.note-list li {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.note-list li:hover {
+  background-color: #e0e0e0;
+}
+
+.note-list li span {
+  flex: 1;
+}
+
+.note-list li button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.editor-area {
+  flex: 1;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.note-editor input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.note-editor .toolbar button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.content-editable {
+  border: 1px solid #ccc;
+  min-height: 200px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+body.dark-mode .content-editable {
+  background-color: #555;
+  color: #f4f4f4;
+}
+
+.note-editor button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+}

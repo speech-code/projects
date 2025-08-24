@@ -1,0 +1,32 @@
+2025-08-22 18:05:40,848 | ERROR | 'Exception occurred: 'function' object has no attribute 'run'
+<traceback object at 0x000001EBAB474BC0>'
+2025-08-22 18:05:42,177 | ERROR | 'Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001EBAAE167B0>'
+2025-08-22 18:12:08,957 | ERROR | 'Exception occurred: name 'AIMessageChunk' is not defined
+<traceback object at 0x000002C5077EB380>'
+2025-08-23 17:33:21,969 | ERROR | 'Exception occurred: 1 validation error for GeneratorOverallState
+hlc
+  Field required [type=missing, input_value={'messages': [HumanMessag...d7-b986-d98b76f5748d')]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+<traceback object at 0x000001A96B766EC0>'
+2025-08-23 17:44:49,672 | ERROR | 'Exception occurred: 1 validation error for GeneratorOverallState
+hlc
+  Field required [type=missing, input_value={'messages': [HumanMessag...c3-a6d3-6786d21b41ef')]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+<traceback object at 0x00000176D4EE9740>'
+2025-08-23 17:50:02,735 | ERROR | 'Exception occurred: 1 validation error for GeneratorOverallState
+hlc
+  Field required [type=missing, input_value={'messages': [HumanMessag...0f-8e94-af9bed6b6151')]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+<traceback object at 0x0000021703E65080>'
+2025-08-23 17:52:24,468 | ERROR | 'Exception occurred: 1 validation error for GeneratorOverallState
+hlc
+  Field required [type=missing, input_value={'messages': [HumanMessag...ce-a76b-b7390ff92422')]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+<traceback object at 0x000001F425B20DC0>'
+2025-08-23 17:55:30,315 | ERROR | 'Exception occurred: Generator.llm_node() missing 1 required positional argument: 'state'
+<traceback object at 0x00000251BAB9F1C0>'
+2025-08-23 21:47:22,316 | ERROR | 'Exception occurred: 'NoneType' object has no attribute 'tools'
+<traceback object at 0x000002CABF244380>'
+2025-08-23 21:53:12,340 | ERROR | 'Exception occurred: 'NoneType' object has no attribute 'tools'
+<traceback object at 0x0000015CE194C8C0>'

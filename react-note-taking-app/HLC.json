@@ -1,0 +1,160 @@
+
+[
+  {
+    "name": "REACT-STYLE",
+    "type": "entry_level",
+    "prompt": "Create this project using React style project structure.",
+    "linkers": [
+      {
+        "name": "framework",
+        "description": "Project framework",
+        "value": {
+          "name": "REACT",
+          "type": "directive",
+          "prompt": "Use React as the framework for this project.",
+          "linkers": [
+            {
+              "name": "version",
+              "description": "React version",
+              "value": {
+                "name": "VERSION",
+                "type": "literal",
+                "prompt": "Use the latest stable version of React."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "NOTE-TAKING-APP",
+    "type": "top_level",
+    "prompt": "Create a note-taking application.",
+    "linkers": [
+      {
+        "name": "note_management",
+        "description": "Core functionalities for managing notes.",
+        "value": {
+          "name": "CORE-NOTE-MANAGEMENT",
+          "type": "feature",
+          "prompt": "Implement core note management functionalities including creating, viewing, editing, deleting, and searching notes.",
+          "linkers": [
+            {
+              "name": "create_note",
+              "description": "Allow users to create new notes.",
+              "value": {
+                "name": "CREATE-NOTE",
+                "type": "control",
+                "prompt": "Users can add new notes."
+              }
+            },
+            {
+              "name": "view_notes",
+              "description": "Display a list of all notes.",
+              "value": {
+                "name": "VIEW-NOTES",
+                "type": "control",
+                "prompt": "Display a list of all notes with previews."
+              }
+            },
+            {
+              "name": "edit_notes",
+              "description": "Enable users to modify existing notes.",
+              "value": {
+                "name": "EDIT-NOTES",
+                "type": "control",
+                "prompt": "Users can modify existing notes."
+              }
+            },
+            {
+              "name": "delete_notes",
+              "description": "Provide an option to remove notes.",
+              "value": {
+                "name": "DELETE-NOTES",
+                "type": "control",
+                "prompt": "Users can delete notes."
+              }
+            },
+            {
+              "name": "search_notes",
+              "description": "Allow users to search notes by title or content.",
+              "value": {
+                "name": "SEARCH-NOTES",
+                "type": "control",
+                "prompt": "Users can search through their notes by title or content."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "rich_text_editing",
+        "description": "Support for rich text formatting within notes.",
+        "value": {
+          "name": "RICH-TEXT-EDITING",
+          "type": "feature",
+          "prompt": "Notes will support basic rich text formatting (bold, italics, lists)."
+        }
+      },
+      {
+        "name": "user_interface",
+        "description": "Design and layout of the application.",
+        "value": {
+          "name": "USER-INTERFACE",
+          "type": "feature",
+          "prompt": "Implement a nice, clean, intuitive, and modern user interface.",
+          "linkers": [
+            {
+              "name": "responsive_layout",
+              "description": "Ensure the UI adapts to different screen sizes.",
+              "value": {
+                "name": "RESPONSIVE-LAYOUT",
+                "type": "directive",
+                "prompt": "The UI should have a responsive layout for various screen sizes (desktop, tablet, mobile)."
+              }
+            },
+            {
+              "name": "two_panel_layout",
+              "description": "Implement a sidebar for note listing and a main area for editing.",
+              "value": {
+                "name": "TWO-PANEL-LAYOUT",
+                "type": "directive",
+                "prompt": "Use a two-panel layout: a sidebar for listing notes and a main area for viewing/editing."
+              }
+            },
+            {
+              "name": "dark_mode",
+              "description": "Optional dark mode theme.",
+              "value": {
+                "name": "DARK-MODE-TOGGLE",
+                "type": "feature",
+                "prompt": "Provide an optional toggle for a dark mode theme."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "data_storage",
+        "description": "Method of storing notes.",
+        "value": {
+          "name": "LOCAL-STORAGE",
+          "type": "feature",
+          "prompt": "All notes will be stored locally in the user's browser.",
+          "linkers": [
+            {
+              "name": "storage_mechanism",
+              "description": "Specify the local storage mechanism.",
+              "value": {
+                "name": "BROWSER-LOCAL-STORAGE",
+                "type": "directive",
+                "prompt": "Use browser's local storage API for data persistence."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
